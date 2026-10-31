@@ -1,6 +1,6 @@
 # Antriksh — The Space Club
 
-A React and JavaScript landing screen for Antriksh, built with Vite.
+A React and JavaScript screen based on the supplied Figma hero export.
 
 ## Run locally
 
@@ -9,13 +9,11 @@ npm install
 npm run dev
 ```
 
-Run `npm run build` for a production build.
+Use `npm run build` to verify the production build.
 
-## Project structure
+## Structure
 
-- `src/App.jsx` composes the page sections.
-- `src/components/` contains one component per screen element.
-- `src/data/db.js` holds navigation, screen copy, card definitions, and placeholder event details.
-- `src/index.css` defines shared colors and responsive styles.
-
-The event panel uses placeholder information. Replace it in `src/data/db.js` when an event is confirmed.
+- `src/App.jsx` composes the page.
+- `src/components/` contains the header, map canvas, side rail, footer, and hero shell.
+- `src/data/db.js` holds editable labels and menu items. Mission and teammate data are intentionally absent.
+- `src/index.css` holds shared colors, pixel frame styling, and responsive layout.
