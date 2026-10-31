@@ -1,2 +1,2 @@
-import Hero from './components/Hero.jsx';
-export default function App() { return <main><Hero /></main>; }
+import TrackerShell from './components/TrackerShell.jsx';
+export default function App() { return <TrackerShell />; }

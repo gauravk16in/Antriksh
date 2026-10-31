@@ -1,0 +1,3 @@
+export default function Astronaut() {
+  return <svg className="astronaut" viewBox="0 0 72 86" role="img" aria-label="Antriksh astronaut mascot" shapeRendering="crispEdges"><path fill="#041326" d="M18 10h36v5h7v12h5v25h-6v12h-7v15H17V65H9V52H4V28h6V15h8z"/><path fill="#82bde0" d="M20 8h32v5h7v13h4v26h-6v12h-6v12H21V64h-7V52H8V28h6V15h6z"/><path fill="#f2f9fa" d="M22 13h28v6h6v20h-6v6H22v-6h-6V20h6zM20 49h32v23H20z"/><path fill="#0a2948" d="M23 20h26v5h5v11h-5v5H23v-5h-5V25h5z"/><path fill="#286c9d" d="M24 23h23v4H24z"/><path fill="#ffcb68" d="M27 51h18v4H27zM30 60h12v7H30z"/><path fill="#0a2948" d="M24 73h8v7h-8zM40 73h8v7h-8zM8 45h8v17H8zM56 45h8v17h-8z"/><path fill="#fff" d="M18 29h5v6h-5zM28 52h4v4h-4z"/><path fill="#ffb46b" d="M48 54h4v4h-4z"/></svg>;
+}

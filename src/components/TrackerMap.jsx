@@ -1,0 +1,10 @@
+import { geoEquirectangular, geoPath } from 'd3-geo';
+import { feature } from 'topojson-client';
+import atlas from 'world-atlas/countries-110m.json';
+import { markers } from '../data/db.js';
+const projection = geoEquirectangular().fitSize([1000, 500], feature(atlas, atlas.objects.land));
+const path = geoPath(projection);
+const countries = feature(atlas, atlas.objects.countries).features;
+export default function TrackerMap({ activeCategories, selected, onSelect, zoom, onZoomChange }) {
+  return <div className="map-viewport" aria-label="Antriksh interactive map"><div className="map-world" style={{ transform: `scale(${zoom})` }}><div className="map-grid"/><svg className="world-svg" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g>{countries.map((country, index) => <path key={country.id ?? index} d={path(country) ?? ""}/>)}</g></svg><span className="ocean-label ocean-pacific">NORTH<br/>PACIFIC<br/>OCEAN</span><span className="ocean-label ocean-atlantic">NORTH<br/>ATLANTIC<br/>OCEAN</span><span className="ocean-label ocean-indian">INDIAN<br/>OCEAN</span>{markers.filter(marker => activeCategories.includes(marker.category)).map(marker => <button key={marker.id} type="button" className={`map-marker marker-${marker.category} ${selected === marker.id ? 'selected' : ''}`} style={{ left: `${marker.x}%`, top: `${marker.y}%` }} onClick={() => onSelect(marker.id)} aria-label={`${marker.title}, ${marker.location}`}><span>{marker.category === 'events' ? '✦' : marker.category === 'projects' ? '✣' : '✧'}</span></button>)}</div><div className="map-radar" aria-hidden="true"><i/><i/><i/><i/></div><div className="map-controls"><button type="button" onClick={() => onZoomChange(Math.max(.85, +(zoom - .1).toFixed(1)))} aria-label="Zoom out">−</button><button type="button" onClick={() => onZoomChange(Math.min(1.45, +(zoom + .1).toFixed(1)))} aria-label="Zoom in">+</button><button type="button" onClick={() => onZoomChange(1)} aria-label="Reset map">◎</button></div><span className="map-attribution">MAP PREVIEW · GOOGLE MAPS CONNECTION READY</span></div>;
+}
