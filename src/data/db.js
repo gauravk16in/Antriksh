@@ -32,3 +32,20 @@ export const destinations = [
   { label: 'Crew', icon: 'UsersRound', href: '#crew', tone: 'mint' },
   { label: 'Hackathon', icon: 'Rocket', href: '#hackathon', tone: 'purple' },
 ];
+
+// Placeholder only: replace when event details are confirmed.
+export const upcomingEvent = {
+  title: 'Next mission',
+  status: 'Coming soon',
+  description: 'A new space club experience is on the horizon.',
+  date: 'Date to be announced',
+  location: 'RNSIT Campus',
+  audience: 'Open for all students',
+};
+
+export const featureCards = [
+  { title: 'Events', icon: 'CalendarDays', description: 'Talks, workshops, stargazing sessions and more.', href: '#events', tone: 'cyan', art: 'events' },
+  { title: 'Projects', icon: 'Satellite', description: 'Explore ongoing space and tech initiatives.', href: '#projects', tone: 'gold', art: 'projects' },
+  { title: 'Crew', icon: 'UsersRound', description: 'Meet the team behind Antriksh.', href: '#crew', tone: 'mint', art: 'crew' },
+  { title: 'Hackathon', icon: 'Trophy', description: 'Our flagship innovation event.', href: '#hackathon', tone: 'purple', art: 'hackathon' },
+];
