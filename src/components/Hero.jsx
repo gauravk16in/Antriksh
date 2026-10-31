@@ -3,7 +3,7 @@ import Icon from './Icon.jsx';
 import Stat from './Stat.jsx';
 
 export default function Hero() {
-  return <section className="hero" aria-labelledby="hero-title">
+  return <section className="hero" id="about" aria-labelledby="hero-title">
     <span className="eyebrow">{hero.eyebrow}</span>
     <h1 id="hero-title">{site.name}</h1>
     <p className="hero-subtitle">{site.subtitle}</p>
