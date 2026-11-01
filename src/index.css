@@ -6,3 +6,34 @@
 .world-svg{position:absolute;inset:0;width:100%;height:100%;opacity:.9;filter:drop-shadow(0 0 5px #0b5c83)}.world-svg path{fill:#06415f;stroke:#0d5676;stroke-width:.55;vector-effect:non-scaling-stroke}.world-svg path:nth-child(5n){fill:#084867}.world-svg path:nth-child(7n){fill:#053b58}
 /* Keep sliding details inside the map viewport at every screen size. */
 .tracker-body{overflow:hidden}.filter-rail{left:0}.tracker-panel{overflow-y:auto}
+/* ---- Category icons + labels ---- */
+.pixel-icon{display:block;image-rendering:pixelated}
+.filter-rail{gap:8px}
+.filter-chip{width:76px;height:66px;padding:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+.filter-chip b{font-size:8px;letter-spacing:.06em;line-height:1}
+.filter-yellow{background:#ffd978}
+.map-marker{display:grid;place-items:center;padding:0}
+.marker-gallery{background:#ffd978}
+.panel-tag{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.1em}
+.tag-events{color:#7ccbec}.tag-projects{color:#8fd5a5}.tag-crew{color:#f29a8c}.tag-gallery{color:#ffd978}
+@media(max-width:700px){
+  .filter-chip{width:54px;height:50px;gap:3px}
+  .filter-chip b{font-size:6px}
+  .filter-chip .pixel-icon{width:20px;height:20px}
+  .map-marker .pixel-icon{width:20px;height:20px}
+}
+/* ---- Marker name labels ---- */
+.marker-label{position:absolute;z-index:3;transform:translate(-50%,calc(-100% - 34px));padding:4px 7px;background:#071831;border:2px solid #5ac8ee;color:#d4f4ff;font-size:9px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;pointer-events:none;box-shadow:2px 2px 0 #020a17;animation:label-in .55s both}
+.label-events{border-color:#7ccbec}.label-projects{border-color:#8fd5a5}.label-crew{border-color:#f29a8c}.label-gallery{border-color:#ffd978}
+@keyframes label-in{from{opacity:0}}
+@media(max-width:700px){.marker-label{font-size:7px;padding:3px 5px;transform:translate(-50%,calc(-100% - 26px))}}
+/* ---- Left buttons open panels ---- */
+.filter-chip{opacity:1}
+.filter-chip.selected{transform:translateX(8px);box-shadow:inset 0 0 0 3px #fff}
+.map-marker.dim,.marker-label.dim{opacity:.3}
+.tracker-panel-heading+h2{margin-top:18px}
+.panel-list{display:grid;gap:10px;margin:16px 0}
+.panel-item{display:block;width:100%;text-align:left;padding:12px;border:2px solid #4fa6cc;background:#0b2948;color:#d2f5ff}
+.panel-item:hover{background:#25658b}
+.panel-item strong{display:block;font-size:13px;margin-bottom:6px;text-transform:uppercase}
+.panel-item small{display:block;font-size:10px;line-height:1.5;color:#9fe1f3}
